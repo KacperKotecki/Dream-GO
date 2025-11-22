@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html lang="pl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Dream GO - Logowanie</title>
+            <link rel="icon" type="image/png" href="../favicons/cogwheel.png">
+            <link rel="stylesheet" href="../css/Administration-style.css">
+        </head>
+        <body>
+            <header class="admin-header">
+                <div class="admin-header__title">
+                    <a href="../index.html"><h1>Dream GO</h1></a>
+                </div>
+                
+                <nav class="admin-header__nav">
+                    <ul>
+                        <li><a href="../index.html">Strona Główna</a></li>
+                        <li><a href="tabela.html">Tabela</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+
+                <div class="admin-header__logout">
+                    </div>
+            </header>
+
+            <main class="admin-main login-card">
+    
+                <div class="login-card__info">
+                    <h2>Logowanie</h2>
+                    <p>Proszę, zaloguj się na swoje konto.</p>
+                </div>
+            
+                <form class="login-card__form" action="dashboard.html">
+                    <div class="form-group">
+                        <label class="form-group__label" for="email">Adres e-mail:</label>
+                        <input class="form-group__input" type="email" id="email" name="email" placeholder="k.kotecki@email.com">
+                    </div>
+            
+                    <div class="form-group">
+                        <label class="form-group__label" for="password">Hasło:</label>
+                        <input class="form-group__input" type="password" id="password" name="password" placeholder="********">
+                    </div>
+            
+                    <div class="form-group">
+                        <button type="submit" class="button button--primary">Zaloguj się</button>
+                    </div>
+                </form>
+                
+            </main>
+            
+            <footer class="admin-footer">
+                <p>2025 Kacper Kotecki. Wszelkie prawa zastrzeżone.</p>
+                <p>Testowano na Google Chrome Version 140.0.7339.215</p>
+                <a href="../specyfikacja.pdf" target="_blank">Zobacz specyfikację projektu</a>
+            </footer>
+        </body>
+    </html>

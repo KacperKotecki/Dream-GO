@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admina - Edytuj post</title>
+    <link rel="icon" type="image/png" href="../favicons/cogwheel.png">
+    <link rel="stylesheet" href="../css/Administration-style.css">
+    <style>
+        /* Mała poprawka lokalna: miniatura posta powinna być prostokątna, nie okrągła */
+        .post-image-override {
+            border-radius: 8px !important;
+            width: 100% !important;
+            height: auto !important;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-header">
+        <div class="admin-header__title">
+            <a href="../index.html"><h1>Dream GO</h1></a>
+        </div>
+        
+        <nav class="admin-header__nav">
+            <ul>
+                <li><a href="dashboard.html">Statystyki</a></li>
+                <li><a href="posty.html">Lista postów</a></li>
+                <li><a href="uzytkownicy.html">Lista użytowników</a></li>
+                <li><a href="profil.html">Edytuj profil</a></li>
+            </ul>
+        </nav>
+
+        <div class="admin-header__logout">
+            <a href="../index.html">Wyloguj się</a>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="profile-editor">
+            <header class="profile-editor__header">
+                <h2>Edytuj post</h2>
+                <p>Wprowadź zmiany w treści, tytule lub miniaturze posta.</p>
+            </header>
+    
+            <div class="profile-editor__layout">
+                <div class="profile-editor__avatar-section">
+                    <img class="profile-editor__avatar-image post-image-override" src="../css/Post-photos/australianRiver.jpg" alt="Miniatura posta">
+                    
+                    <input type="file" id="post-image-upload" style="display: none;">
+                    <label for="post-image-upload" class="button button--secondary">
+                        Zmień miniaturę
+                    </label>
+                </div>
+
+                <form class="profile-editor__form-section" action="posty.html">
+                    <div class="form-group">
+                        <label class="form-group__label" for="post-title">Tytuł posta:</label>
+                        <input class="form-group__input" type="text" id="post-title" name="post-title" value="Ukryte szlaki Queensland: Spokój nad rzeką">
+                    </div>
+
+                    <div class="profile-editor__name-fields">
+                        <div class="form-group">
+                            <label class="form-group__label" for="post-date">Data publikacji:</label>
+                            <input class="form-group__input" type="date" id="post-date" name="post-date" value="2024-09-20">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-group__label" for="post-category">Kategoria:</label>
+                            <input class="form-group__input" type="text" id="post-category" name="post-category" value="Podróże / Australia">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-group__label" for="post-content">Treść posta:</label>
+                        <textarea class="form-group__textarea" id="post-content" name="post-content">Z dala od zgiełku miast, gdzie słychać tylko szum wody i śpiew ptaków. Odkryj z nami dzikie serce Australii i poczuj prawdziwą wolność. To miejsce, w którym czas płynie wolniej...</textarea>
+                    </div>
+
+                    <div class="profile-editor__actions">
+                        <a href="posty.html" class="button button--secondary" style="margin-right: 1rem; text-decoration: none;">Anuluj</a>
+                        <button type="submit" class="button button--primary">Zapisz zmiany</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="admin-footer">
+        <p>2025 Kacper Kotecki. Wszelkie prawa zastrzeżone.</p>
+        <p>Testowano na Google Chrome Version 140.0.7339.215</p>
+        <a href="../specyfikacja.pdf" target="_blank">Zobacz specyfikację projektu</a>
+    </footer>
+</body>
+</html>

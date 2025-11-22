@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <html lang="pl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Panel Admina - Edycja profilu</title>
+            <link rel="icon" type="image/png" href="../favicons/cogwheel.png">
+            <link rel="stylesheet" href="../css/Administration-style.css">
+        </head>
+        <body class="dashboard-body">
+
+            <header class="admin-header">
+                <div class="admin-header__title">
+                   <a href="../index.html"><h1>Dream GO</h1></a>
+                </div>
+                
+                <nav class="admin-header__nav">
+                    <ul>
+                        <li><a href="dashboard.html">Statystyki</a></li>
+                        <li><a href="posty.html">Lista postów</a></li>
+                        <li><a href="uzytkownicy.html">Lista użytowników</a></li>
+                        <li><a href="profil.html">Edytuj profil</a></li>
+                    </ul>
+                </nav>
+
+                <div class="admin-header__logout">
+                    <a href="../index.html">Wyloguj się</a>
+                </div>
+            </header>
+    
+            <main class="admin-main">
+                <div class="profile-editor">
+                    <header class="profile-editor__header">
+                        <h2>Edytuj profil</h2>
+                        <p>Zaktualizuj swoje dane personalne i zdjęcie profilowe.</p>
+                    </header>
+            
+                    <div class="profile-editor__layout">
+                        <div class="profile-editor__avatar-section">
+    <img class="profile-editor__avatar-image" src="../css/images/zdjecie.jpg" alt="Zdjęcie profilowe">
+    
+    <input type="file" id="avatar-upload" style="display: none;">
+    
+    <label for="avatar-upload" class="button button--secondary">
+        Zmień zdjęcie
+    </label>
+</div>
+        
+                        <form class="profile-editor__form-section">
+                            <div class="profile-editor__name-fields">
+                                <div class="form-group">
+                                    <label class="form-group__label" for="firstname">Imię:</label>
+                                    <input class="form-group__input" type="text" id="firstname" name="firstname" placeholder="Kacper">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-group__label" for="lastname">Nazwisko:</label>
+                                    <input class="form-group__input" type="text" id="lastname" name="lastname" placeholder="Kotecki">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-group__label" for="email">Adres e-mail:</label>
+                                <input class="form-group__input" type="email" id="email" name="email" placeholder="k.kotecki@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-group__label" for="tel">Numer Telefonu:</label>
+                                <input class="form-group__input" type="tel" id="tel" name="tel" placeholder="795 223 195">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-group__label" for="bio">Wiadomość (bio):</label>
+                                <textarea class="form-group__textarea" id="bio" name="bio" placeholder="Napisz coś o sobie"></textarea>
+                            </div>
+                            <div class="profile-editor__actions">
+                                <button type="submit" class="button button--primary">Zapisz zmiany</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="admin-footer">
+                <p>2025 Kacper Kotecki. Wszelkie prawa zastrzeżone.</p>
+                <p>Testowano na Google Chrome Version 140.0.7339.215</p>
+                <a href="../specyfikacja.pdf" target="_blank">Zobacz specyfikację projektu</a>
+                
+            </footer>
+        </body>
+    </html>

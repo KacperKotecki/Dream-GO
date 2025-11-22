@@ -1,0 +1,465 @@
+/* ==========================================================================
+   DREAM GO - ADMIN PANEL STYLESHEET
+   ========================================================================== */
+/* SPIS TREŚCI:
+   1. Style Globalne (Reset, Typografia, Tagi bazowe)
+   2. Elementy Wspólne (Layout, Header, Footer, Formularze, Przyciski)
+   3. Sekcja: Dashboard
+   4. Sekcja: Login
+   5. Sekcja: Posty (Lista postów)
+   6. Sekcja: Profil (Edycja profilu)
+   7. Sekcja: Użytkownicy (Tabela)
+*/
+
+/* ==========================================================================
+   1. STYLE GLOBALNE
+   ========================================================================== */
+/* Reset i ustawienia bazowe dla całej strony */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif; /* Domyślna czcionka techniczna */
+    color: #000000;
+    background-color: #ffffff;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* --- Typografia Globalna --- */
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.4rem; }
+p  { font-size: 1rem; }
+
+
+/* ==========================================================================
+   2. ELEMENTY WSPÓLNE (REUSABLE COMPONENTS)
+   ========================================================================== */
+/* Elementy używane na wielu podstronach: Layout, Header, Footer, UI */
+
+/* --- Główny Kontener Treści (Layout) --- */
+.admin-main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f2e9e4;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Nagłówek (Header) --- */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: #22223b;
+    border-bottom: 5px solid #9a8c98;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.admin-header__title h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #f2e9e4;
+}
+
+.admin-header__nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.admin-header__nav a,
+.admin-header__logout a {
+    font-family: sans-serif;
+    font-style: normal;
+    color: #f2e9e4;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.admin-header__nav a:hover,
+.admin-header__logout a:hover {
+    color: #c9ada7;
+}
+
+/* Responsywność Headera */
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .admin-header__nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* --- Stopka (Footer) --- */
+.admin-footer {
+    text-align: center;
+    padding: 2rem;
+    color: #f2e9e4;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    background-color: #22223b;
+}
+
+/* --- Formularze (Forms) --- */
+/* Wykorzystywane w: Login, Edycja Profilu, Edycja Postów, Edycja Userów */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.form-group__input,
+.form-group__textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group__textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* --- Przyciski (Buttons) --- */
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    color: #f2e9e4;
+    font-family: sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Domyślny i Primary */
+button.button,
+.button--primary {
+    background-color: #22223b;
+    color: #ffffff;
+}
+
+button.button:hover,
+.button--primary:hover {
+    background-color: #4a4e69;
+    color: #f2e9e4;
+}
+
+/* Secondary */
+.button--secondary {
+    background-color: #22223b;
+}
+
+.button--secondary:hover {
+    background-color: #4a4e69;
+}
+
+
+/* ==========================================================================
+   3. SEKCJA: DASHBOARD (dashboard.html)
+   ========================================================================== */
+.dashboard-stats__title {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.dashboard-stats__list {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-stats__item {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+/* ==========================================================================
+   4. SEKCJA: LOGIN (login.html)
+   ========================================================================== */
+.login-card {
+    max-width: 500px;
+    margin-top: 4rem;
+}
+
+.login-card__info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+/* ==========================================================================
+   5. SEKCJA: POSTY (posty.html)
+   ========================================================================== */
+.post-list-page__title,
+.post-list-page__description {
+    text-align: center;
+}
+
+.post-list-page__add-action {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Przycisk "Wczytaj więcej" */
+.post-list-page > .button--secondary {
+    display: block;
+    margin: 2rem auto 0 auto;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.post-list__item {
+    display: grid;
+    grid-template-columns: 150px 1fr auto; /* Obrazek | Treść | Akcje */
+    gap: 1.5rem;
+    align-items: center;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-list__item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.post-list__image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.post-list__content {
+    margin: 0 5rem; /* UWAGA: W oryginale było literówka comtent -> poprawiam na content jeśli w HTML jest content, ale zostawiam nazwy z CSS */
+}
+/* W oryginale selektor brzmiał .post-list__comtent - jeśli w HTML masz błąd, to zadziała, jeśli nie, to tu jest CSS.
+   Zostawiam tak jak w źródle, żeby nie zepsuć, ale sugeruję poprawkę w HTML i CSS na 'content'.
+   Poniżej selektor z oryginału: */
+.post-list__comtent { 
+    margin: 0 5rem; 
+}
+
+.post-list__content h3 {
+    font-size: 1.2rem;
+}
+
+.post-list__content p {
+    font-size: 0.9rem;
+    color: #4a4e69;
+    margin: 0;
+}
+
+.post-list__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    text-align: right;
+    padding-right: 1.5rem;
+}
+
+.post-list__meta {
+    font-size: 0.8rem;
+    color: #9a8c98;
+    font-family: sans-serif;
+    font-style: normal;
+}
+
+/* Responsywność Listy Postów */
+@media (max-width: 650px) {
+    .post-list__item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .post-list__content {
+        margin: 0 1rem;
+    }
+
+    .post-list__image img {
+        width: 100%;
+        height: 150px;
+    }
+
+    .post-list__actions {
+        padding-right: 0;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+}
+
+
+/* ==========================================================================
+   6. SEKCJA: PROFIL (profil.html)
+   ========================================================================== */
+.profile-editor__header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-editor__layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.profile-editor__avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.profile-editor__avatar-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f1f3f5;
+}
+
+.profile-editor__name-fields {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.profile-editor__name-fields .form-group {
+    width: 100%;
+}
+
+.profile-editor__actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Responsywność Profilu */
+@media (max-width: 992px) {
+    .profile-editor__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-editor__avatar-section {
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+        padding-right: 0;
+        padding-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-editor__name-fields {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+/* ==========================================================================
+   7. SEKCJA: UŻYTKOWNICY (uzytkownicy.html)
+   ========================================================================== */
+.users-table-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table__caption {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+}
+
+.users-table__head {
+    background-color: #22223b;
+    color: white;
+}
+
+.users-table__header-cell,
+.users-table__cell {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-family: sans-serif;
+    font-style: normal;
+}
+
+.users-table__header-cell {
+    font-weight: bold;
+}
+
+.users-table__action-link {
+    font-weight: bold;
+}

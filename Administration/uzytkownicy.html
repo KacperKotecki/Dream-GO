@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <html lang="pl">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Panel Admina - Edytuj uzytkownika</title>
+            <link rel="icon" type="image/png" href="../favicons/cogwheel.png">
+            <link rel="stylesheet" href="../css/Administration-style.css">
+        </head>
+        <body>
+            <header class="admin-header">
+                <div class="admin-header__title">
+                    <a href="../index.html"><h1>Dream GO</h1></a>
+                </div>
+                
+                <nav class="admin-header__nav">
+                    <ul>
+                        <li><a href="dashboard.html">Statystyki</a></li>
+                        <li><a href="posty.html">Lista postów</a></li>
+                        <li><a href="uzytkownicy.html">Lista użytowników</a></li>
+                        <li><a href="profil.html">Edytuj profil</a></li>
+                    </ul>
+                </nav>
+
+                <div class="admin-header__logout">
+                    <a href="../index.html">Wyloguj się</a>
+                </div>
+            </header>
+
+            <main class="admin-main">
+                <div class="users-table-container">
+                <table class="users-table">
+                    <caption class="users-table__caption">Lista użytkowników serwisu</caption>
+                    <thead class="users-table__head">
+                        <tr class="users-table__row">
+                            <th class="users-table__header-cell" scope="col">ID</th>
+                            <th class="users-table__header-cell" scope="col">Imię</th>
+                            <th class="users-table__header-cell" scope="col">Nazwisko </th>
+                            <th class="users-table__header-cell" scope="col">Email</th>
+                            <th class="users-table__header-cell" scope="col">Edytuj</th>
+                        </tr>
+                    </thead>
+                    <tbody class="users-table__body">
+                        <tr class="users-table__row">
+                            <td class="users-table__cell">5293741</td>
+                            <td class="users-table__cell">Jan</td>
+                            <td class="users-table__cell">Kowalski</td>
+                            <td class="users-table__cell">j.kowalski@o2.pl</td>
+                            <td class="users-table__cell"><a href="edytuj-uzytkownika.html" class="users-table__action-link">Edytuj</a></td>
+                        </tr>
+                        <tr class="users-table__row">
+                            <td class="users-table__cell">5293742</td>
+                            <td class="users-table__cell">Arek</td>
+                            <td class="users-table__cell">Bartosiewicz</td>
+                            <td class="users-table__cell">a.bartosiewicz@o2.pl</td>
+                            <td class="users-table__cell"><a href="edytuj-uzytkownika.html" class="users-table__action-link">Edytuj</a></td>
+                        </tr>
+                        <tr class="users-table__row">
+                            <td class="users-table__cell">5293743</td>
+                            <td class="users-table__cell">Maria</td>
+                            <td class="users-table__cell">Wiśniewska</td>
+                            <td class="users-table__cell">m.wisniewska@o2.pl</td>
+                            <td class="users-table__cell"><a href="edytuj-uzytkownika.html" class="users-table__action-link">Edytuj</a></td>
+                        </tr>
+                        <tr class="users-table__row">
+                            <td class="users-table__cell">5293744</td>
+                            <td class="users-table__cell">Amelka</td>
+                            <td class="users-table__cell">Błaszczyk</td>
+                            <td class="users-table__cell">a.blaszczyk@o2.pl</td>
+                            <td class="users-table__cell"><a href="edytuj-uzytkownika.html" class="users-table__action-link">Edytuj</a></td>
+                        </tr>
+                        <tr class="users-table__row">
+                            <td class="users-table__cell">5293745</td>
+                            <td class="users-table__cell">Maja</td>
+                            <td class="users-table__cell">Nowak</td>
+                            <td class="users-table__cell">m.nowak@o2.pl</td>
+                            <td class="users-table__cell"><a href="edytuj-uzytkownika.html" class="users-table__action-link">Edytuj</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </main>
+            
+            <footer class="admin-footer">
+                <p>2025 Kacper Kotecki. Wszelkie prawa zastrzeżone.</p>
+                <p>Testowano na Google Chrome Version 140.0.7339.215</p>
+                <a href="../specyfikacja.pdf" target="_blank">Zobacz specyfikację projektu</a>
+            </footer>
+        </body>
+    </html>

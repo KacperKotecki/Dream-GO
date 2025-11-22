@@ -1,0 +1,408 @@
+/* ==========================================================================
+   DREAM GO - MAIN PAGE STYLESHEET
+   ========================================================================== */
+/* SPIS TREŚCI:
+   1. Style Globalne (Reset, Typografia, Tagi bazowe)
+   2. Elementy Wspólne (Header, Footer, Formularze, Przyciski)
+   3. Sekcja: Index (Strona Główna)
+   4. Sekcja: Informacje
+   5. Sekcja: Kontakt
+   6. Sekcja: Tabela
+*/
+
+/* ==========================================================================
+   1. STYLE GLOBALNE
+   ========================================================================== */
+/* Reset i ustawienia bazowe dla całej strony */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    color: #333;
+    background-color: #ffffff;
+}
+
+main {
+    padding: 4rem 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* --- Typografia Globalna --- */
+h1, h2, h3, p {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; }
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Tytuł sekcji (używany globalnie) */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+
+/* ==========================================================================
+   2. ELEMENTY WSPÓLNE (REUSABLE COMPONENTS)
+   ========================================================================== */
+
+/* --- Nagłówek (Header) --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 5%;
+    background-color: #dda15e;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.main-header__title h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+}
+
+.main-header__nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    color: white;
+}
+
+.main-header__nav a,
+.main-header__login a {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.main-header a:hover {
+    color: #e7e7e7;
+}
+
+/* Responsywność Nagłówka */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .main-header__nav ul {
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+    }
+}
+
+/* --- Stopka (Footer) --- */
+.main-footer {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #606c38;
+    margin-top: 4rem;
+    border-top: 1px solid #e0e0e0;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+}
+
+.main-footer__link {
+    color: #f2f6f6;
+    font-weight: bold;
+}
+
+.main-footer__text {
+    color: #f2f6f6;
+}
+
+/* --- Przyciski (Buttons) --- */
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    background-color: #dda15e;
+    color: #fefae0;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #FDF5C4;
+}
+
+/* Primary Modifier */
+.button--primary {
+    background-color: #495a58;
+    color: #ffffff;
+}
+
+.button--primary:hover {
+    background-color: #fedc02;
+}
+
+/* --- Formularze (Forms) --- */
+.form-group {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.form-group__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: sans-serif;
+    font-style: normal;
+}
+
+.form-group__input,
+.form-group__textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #283618;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.form-group__textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   3. SEKCJA: INDEX (Strona Główna)
+   ========================================================================== */
+/* Hero Section */
+.hero-section {
+    height: 90vh;
+    background-image: url('../css/images/backgroundphoto.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero-section__title {
+    color: white;
+    max-width: 800px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    font-size: 2.5rem;
+}
+
+/* Responsywność Hero */
+@media (max-width: 768px) {
+    .hero-section__title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Post Grid */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.post-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.post-card__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.post-card__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1rem;
+}
+
+.post-card__date {
+    font-size: 0.875rem;
+    font-style: italic;
+    text-align: right;
+}
+
+.post-card__actions {
+    margin-top: auto;
+}
+
+
+/* ==========================================================================
+   4. SEKCJA: INFORMACJE (informacje.html)
+   ========================================================================== */
+.info-card {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background-color: #eeeeee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-card__title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.info-card__text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.info-card .button {
+    margin-top: 2rem;
+}
+
+.info-card .button:hover {
+    background-color: #fedc02;
+}
+
+@media (max-width: 768px) {
+    .info-card {
+        padding: 2rem;
+        margin: 2rem;
+    }
+}
+
+
+/* ==========================================================================
+   5. SEKCJA: KONTAKT (kontakt.html)
+   ========================================================================== */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    background-color: #495a58;
+    padding: 4rem 6rem;
+    color: #ffffff;
+    align-items: center;
+}
+
+.contact-layout__info h1 {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.contact-layout__info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group-horizontal {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Responsywność Kontaktu */
+@media (max-width: 880px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        padding: 3rem 2rem;
+        gap: 2rem;
+    }
+
+    .form-group-horizontal {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+/* ==========================================================================
+   6. SEKCJA: TABELA (tabela.html)
+   ========================================================================== */
+.table-container {
+    overflow-x: auto;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    text-align: center;
+}
+
+.content-table__caption {
+    display: none;
+}
+
+.content-table__head {
+    background-color: #e5e3dc;
+    color: #333;
+}
+
+.content-table__header-cell,
+.content-table__cell {
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+.content-table__header-cell {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-style: normal;
+}
