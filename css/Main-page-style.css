@@ -205,7 +205,7 @@ p {
 /* Hero Section */
 .hero-section {
     height: 90vh;
-    background-image: url('../css/images/backgroundphoto.jpg');
+    background-image: url('css/images/backgroundphoto.webp');
     background-size: cover;
     background-position: center;
     display: flex;
